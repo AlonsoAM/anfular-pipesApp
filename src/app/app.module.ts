@@ -11,6 +11,7 @@ import { VentasModule } from './ventas/ventas.module';
 import localeEsPE from '@angular/common/locales/es-PE';
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from '@angular/common';
+
 registerLocaleData(localeEsPE);
 registerLocaleData(localeFr);
 
