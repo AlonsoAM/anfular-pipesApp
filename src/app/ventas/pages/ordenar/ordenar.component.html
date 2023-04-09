@@ -1,4 +1,58 @@
 <div>
   <h1>Pipes Personalizados</h1>
-  <p>Pipes cerados por {{ "nosotros" | mayusculas }}.</p>
+  <p>Pipes cerados por {{ "nosotros" | mayusculas : enMayuscula }}.</p>
+</div>
+
+<p-toolbar>
+  <div class="p-toolbar-group-start"></div>
+  <div class="p-toolbar-group-end">
+    <p-button
+      label="Toggle Mayúsculas"
+      styleClass="p-button-help p-button-rounded"
+      class="mr-2"
+      icon="pi pi-pencil"
+      iconPos="right"
+      (onClick)="toggleMayuscula()"
+    ></p-button>
+    <p-button
+      icon="pi pi-sort"
+      class="mr-2"
+      styleClass="p-button-success p-button-rounded"
+      label="Por nombre"
+    ></p-button>
+    <p-button
+      icon="pi pi-sort"
+      class="mr-2"
+      styleClass="p-button-danger p-button-rounded"
+      label="Valores"
+    ></p-button>
+    <p-button
+      icon="pi pi-sort"
+      class="mr-2"
+      styleClass="p-button-warning p-button-rounded"
+      label="Por color"
+    ></p-button>
+  </div>
+</p-toolbar>
+<div class="grid mt-2">
+  <div class="col">
+    <div class="card">
+      <p-table [value]="products" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Nombre</th>
+            <th>Vuela</th>
+            <th>Color</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+          <tr>
+            <td>{{ product.code }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.category }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
 </div>
